@@ -1,3 +1,4 @@
+// menu color change
 function scrollHandler() {
   console.log($(window).scrollTop());
   console.log($('.about').position().top);
@@ -12,3 +13,14 @@ function scrollHandler() {
 $(window).on('scroll', scrollHandler);
 
 scrollHandler();
+
+// section scroll
+
+$('.menu-right button').on('click', function() {
+  var id = $(this).attr('id');
+  if (id == "about-btn") {
+    $('html, body').animate({scrollTop: $('.about').position().top}, 1000);
+  } else if (id == "contact-btn") {
+    $('html, body').animate({scrollTop: $('.contact').position().top}, 1000);
+  }
+})
