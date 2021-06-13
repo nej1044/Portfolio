@@ -5,6 +5,12 @@ function scrollHandler() {
 
   if ($(window).scrollTop() >= $('.about').position().top) {
     $('.menu-right button').css('color', '#4a4a4a');
+    // inner bar
+    $('.skill').each(function() {
+      var skill = $(this);
+      var percentage = skill.find('.percentage').text();
+      skill.find('.inner-bar').animate({width: percentage}, 1200);
+    });
   } else {
     $('.menu-right button').css('color', 'white');
   }
